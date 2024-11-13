@@ -1,6 +1,6 @@
 #include "header.h"
 
 int function(void) {
-  return 0;
+    return 0;
 }
 

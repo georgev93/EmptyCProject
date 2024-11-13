@@ -2,12 +2,11 @@
 
 #ifdef _WIN32
     #pragma clang diagnostic ignored "-Wnonportable-system-include-path"
-    #include "windows.h"    // Needed for enabling ANSI escape characters on Windows
-    #include <cstring>      // Needed for potentially stripping -c arg
+    #include "windows.h" // Needed for enabling ANSI escape characters on Windows
+    #include <cstring>   // Needed for potentially stripping -c arg
 #endif
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv) {
 // Enable ANSI Escape characters (colors) if compiling in Windows
 #ifdef _WIN32
     DWORD dwMode = 0;
