@@ -1,8 +1,4 @@
-project(
-  'Empty Test',
-  ['c'],
-  version: '1.0'
-)
+project('Empty Test', ['c'], version: '1.0')
 
 add_languages('cpp', native: true)
 
@@ -11,9 +7,11 @@ proj_src = files(
   'src/source.c',
 )
 
-proj_inc = include_directories([
+proj_inc = include_directories(
+  [
     './inc',
-])
+  ],
+)
 
 proj_link_args = []
 
@@ -22,11 +20,13 @@ proj_c_args = []
 ### ============================
 
 ### ========== FAKES ==========
-fake_src = files()
+# fake_src = files()
 
-fake_inc = include_directories([
-  './tests/fakes/inc',
-])
+fake_inc = include_directories(
+  [
+    './tests/fakes/inc',
+  ],
+)
 ### ===========================
 
 ### ========== TESTS ==========
@@ -49,15 +49,16 @@ test_c_args = test_common_args + [
 test_cpp_args = test_common_args + []
 ### ===========================
 
-### ========== SUBPROJECTS ========== 
+### ========== SUBPROJECTS ==========
 test_deps = [dependency('cpputest', native: true)]
-### ================================= 
+### =================================
 
-### ========== DEPENDENCIES ========== 
-### ================================== 
+### ========== DEPENDENCIES ==========
+### ==================================
 
 ### ========== EXECUTABLES ==========
-test_exe = executable('tests',
+test_exe = executable(
+  'tests',
   build_by_default: false,
   dependencies: test_deps,
   sources: [proj_src, test_src],
@@ -65,7 +66,7 @@ test_exe = executable('tests',
   cpp_args: test_cpp_args,
   link_args: test_link_args,
   include_directories: [proj_inc, test_inc, fake_inc],
-  native: true
+  native: true,
 )
 ### =================================
 
@@ -76,4 +77,3 @@ test('unit_tests', test_exe, args: '-c', timeout: 30, is_parallel: false)
 ### ========== CUSTOM TARGETS  ==========
 run_target('unit_test', command: [test_exe, '-c'])
 ### =====================================
-
