@@ -39,14 +39,18 @@ test_inc = include_directories([])
 
 test_link_args = []
 
-test_common_args = []
-
-test_c_args = test_common_args + [
+test_common_args = [
   '-Wall',
   '-Weverything',
 ]
 
-test_cpp_args = test_common_args + []
+test_c_args = test_common_args + [
+  '-std=c90'
+]
+
+test_cpp_args = test_common_args + [
+  '-std=c++11',
+]
 ### ===========================
 
 ### ========== SUBPROJECTS ==========
