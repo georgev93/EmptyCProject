@@ -1,5 +1,5 @@
 ---
-Checks:          '*, -misc-include-cleaner, -*todo*, -misc-unused-parameters, -hicpp-named-parameter, -*avoid*global-variables, -*identifier-length, -*struct-pack-align, -*unroll*, -*include-cleaner, -*include-order, -*easily-swappable-parameters, -llvm-header-guard, -*restrict-*-libc-headers, -*underscore-in-*test-name, -*libc-callee-namespace, -*trailing-return-type, -llvmlibc-implementation-in-namespace, -unused-includes, -*magic-number*'
+Checks:          '*, -misc-include-cleaner, -*todo*, -misc-unused-parameters, -hicpp-named-parameter, -*avoid*global-variables, -*identifier-length, -*struct-pack-align, -*unroll*, -*include-cleaner, -*include-order, -*easily-swappable-parameters, -llvm-header-guard, -*restrict-*-libc-headers, -*underscore-in-*test-name, -*libc-callee-namespace, -*trailing-return-type, -llvmlibc-implementation-in-namespace, -unused-includes, -*magic-number*, -*default-arguments-calls, -*pointer-arithmetic, -*using-namespace, -*owning-memory, -*constant-array-index, -*union-access, -*avoid-c-arrays, -*special-member-functions, -*non-private-member-variables-in-classes'
 WarningsAsErrors: ''
 HeaderFileExtensions:
   - ''
